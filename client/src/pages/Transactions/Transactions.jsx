@@ -14,7 +14,7 @@ const Transactions = ({ }) => {
   const [limit, setLimit] = useState(10);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_BACKEND_URL_FOR_PRODUCTS}?page=${page}&limit=${limit}`)
+    axios.get(`${process.env.REACT_APP_BACKEND_URL_FOR_PRODUCTS}/transactions?page=${page}&limit=${limit}`)
       .then(response => {
         console.log(response);
         setTransactions(response.data.savedProducts);
