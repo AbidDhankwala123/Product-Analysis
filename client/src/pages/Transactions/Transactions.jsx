@@ -14,7 +14,7 @@ const Transactions = ({ }) => {
   const [limit, setLimit] = useState(10);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_BACKEND_URL_FOR_PRODUCTS}/transactions?page=${page}&limit=${limit}`)
+    axios.get(`${process.env.REACT_APP_BACKEND_URL_FOR_PRODUCTS}transactions?page=${page}&limit=${limit}`)
       .then(response => {
         console.log(response);
         setTransactions(response.data.savedProducts);
@@ -28,7 +28,7 @@ const Transactions = ({ }) => {
   }, [page, limit])
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_BACKEND_URL_FOR_PRODUCTS}/filter_products?search=${search}&month=${month}`)
+    axios.get(`${process.env.REACT_APP_BACKEND_URL_FOR_PRODUCTS}filter_products?search=${search}&month=${month}`)
       .then(response => {
         console.log(response);
         setTransactions(response.data);
@@ -39,7 +39,7 @@ const Transactions = ({ }) => {
   }, [month, search])
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_BACKEND_URL_FOR_PRODUCTS}/statistics?month=${month}`)
+    axios.get(`${process.env.REACT_APP_BACKEND_URL_FOR_PRODUCTS}statistics?month=${month}`)
       .then(response => {
         // console.log(response);
         setStatistics(response.data);
